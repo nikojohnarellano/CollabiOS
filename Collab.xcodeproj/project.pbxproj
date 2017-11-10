@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6078499A1FB42A34002498AF /* CollabHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607849991FB42A34002498AF /* CollabHandler.swift */; };
+		609B71091FA568CD007EC36F /* SessionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609B71081FA568CD007EC36F /* SessionTableViewCell.swift */; };
+		60ADE5771FAF1CFC00E350C0 /* LoginProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ADE5761FAF1CFC00E350C0 /* LoginProvider.swift */; };
+		60ADE57A1FAF1FCA00E350C0 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ADE5791FAF1FCA00E350C0 /* Endpoints.swift */; };
+		60ADE57C1FAF224300E350C0 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ADE57B1FAF224300E350C0 /* Token.swift */; };
+		60ADE57E1FAF917C00E350C0 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ADE57D1FAF917C00E350C0 /* SignInController.swift */; };
+		60ADE5801FB03ECD00E350C0 /* CollabNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ADE57F1FB03ECD00E350C0 /* CollabNavigationController.swift */; };
+		60B8ECAC1FAAB4B600D7DAFD /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B8ECAB1FAAB4B600D7DAFD /* DataProvider.swift */; };
 		60F253CB1F9B46100013B414 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F253CA1F9B46100013B414 /* AppDelegate.swift */; };
 		60F253CD1F9B46100013B414 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F253CC1F9B46100013B414 /* ViewController.swift */; };
 		60F253D01F9B46100013B414 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60F253CE1F9B46100013B414 /* Main.storyboard */; };
@@ -14,6 +22,16 @@
 		60F253D51F9B46100013B414 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60F253D41F9B46100013B414 /* Assets.xcassets */; };
 		60F253D81F9B46100013B414 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60F253D61F9B46100013B414 /* LaunchScreen.storyboard */; };
 		60F253E31F9B46100013B414 /* CollabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F253E21F9B46100013B414 /* CollabTests.swift */; };
+		60F253F01F9B476B0013B414 /* SessionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F253EF1F9B476B0013B414 /* SessionListViewController.swift */; };
+		60F253F51F9BEA580013B414 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F253F41F9BEA580013B414 /* Session.swift */; };
+		60F253F71F9BEA720013B414 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F253F61F9BEA720013B414 /* User.swift */; };
+		60F253FD1F9C0BAB0013B414 /* CreateSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F253FC1F9C0BAB0013B414 /* CreateSessionViewController.swift */; };
+		60F253FF1F9C6C870013B414 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F253FE1F9C6C870013B414 /* SessionViewController.swift */; };
+		60F254011F9DA32B0013B414 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F254001F9DA32B0013B414 /* Note.swift */; };
+		60F254031F9DBA8B0013B414 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F254021F9DBA8B0013B414 /* PasswordViewController.swift */; };
+		60F254051F9DD1D50013B414 /* AddQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F254041F9DD1D50013B414 /* AddQuestionViewController.swift */; };
+		895EA574AA2F07933C7EE5B4 /* Pods_Collab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF522B33C0A76F6BB7CDD93 /* Pods_Collab.framework */; };
+		8F04C9E1131723868AD9FC22 /* Pods_CollabTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D66E75055EE42A99F62E8B1D /* Pods_CollabTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +45,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37D9D0AD93A11A11C0BD973F /* Pods-Collab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Collab.release.xcconfig"; path = "Pods/Target Support Files/Pods-Collab/Pods-Collab.release.xcconfig"; sourceTree = "<group>"; };
+		3965EE8261E1A33238D9CF1C /* Pods-CollabTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollabTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CollabTests/Pods-CollabTests.debug.xcconfig"; sourceTree = "<group>"; };
+		607849991FB42A34002498AF /* CollabHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollabHandler.swift; sourceTree = "<group>"; };
+		609B70FA1FA54557007EC36F /* Material.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Material.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		609B70FC1FA5455B007EC36F /* Motion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Motion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		609B71081FA568CD007EC36F /* SessionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTableViewCell.swift; sourceTree = "<group>"; };
+		60ADE5761FAF1CFC00E350C0 /* LoginProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProvider.swift; sourceTree = "<group>"; };
+		60ADE5791FAF1FCA00E350C0 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		60ADE57B1FAF224300E350C0 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		60ADE57D1FAF917C00E350C0 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
+		60ADE57F1FB03ECD00E350C0 /* CollabNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollabNavigationController.swift; sourceTree = "<group>"; };
+		60B8ECAB1FAAB4B600D7DAFD /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		60F253C71F9B46100013B414 /* Collab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Collab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60F253CA1F9B46100013B414 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60F253CC1F9B46100013B414 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +68,18 @@
 		60F253DE1F9B46100013B414 /* CollabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60F253E21F9B46100013B414 /* CollabTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollabTests.swift; sourceTree = "<group>"; };
 		60F253E41F9B46100013B414 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60F253EF1F9B476B0013B414 /* SessionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListViewController.swift; sourceTree = "<group>"; };
+		60F253F41F9BEA580013B414 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		60F253F61F9BEA720013B414 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		60F253FC1F9C0BAB0013B414 /* CreateSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSessionViewController.swift; sourceTree = "<group>"; };
+		60F253FE1F9C6C870013B414 /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
+		60F254001F9DA32B0013B414 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		60F254021F9DBA8B0013B414 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		60F254041F9DD1D50013B414 /* AddQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionViewController.swift; sourceTree = "<group>"; };
+		7D0935B0AC0CA358E119F73B /* Pods-Collab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Collab.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Collab/Pods-Collab.debug.xcconfig"; sourceTree = "<group>"; };
+		D5730DD855B66EC6D8B71101 /* Pods-CollabTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollabTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CollabTests/Pods-CollabTests.release.xcconfig"; sourceTree = "<group>"; };
+		D66E75055EE42A99F62E8B1D /* Pods_CollabTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CollabTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEF522B33C0A76F6BB7CDD93 /* Pods_Collab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Collab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				895EA574AA2F07933C7EE5B4 /* Pods_Collab.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +95,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F04C9E1131723868AD9FC22 /* Pods_CollabTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		607849981FB429E4002498AF /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+				607849991FB42A34002498AF /* CollabHandler.swift */,
+			);
+			path = Handler;
+			sourceTree = "<group>";
+		};
+		609B710B1FA5937C007EC36F /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				60B8ECAB1FAAB4B600D7DAFD /* DataProvider.swift */,
+				60ADE5761FAF1CFC00E350C0 /* LoginProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		60ADE5781FAF1FB700E350C0 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				60ADE5791FAF1FCA00E350C0 /* Endpoints.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		60F253BE1F9B46100013B414 = {
 			isa = PBXGroup;
 			children = (
 				60F253C91F9B46100013B414 /* Collab */,
 				60F253E11F9B46100013B414 /* CollabTests */,
 				60F253C81F9B46100013B414 /* Products */,
+				CCB7233DA0F986A74CB04B5D /* Pods */,
+				DA64E61ADB604EF647E59CF9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +150,12 @@
 		60F253C91F9B46100013B414 /* Collab */ = {
 			isa = PBXGroup;
 			children = (
+				607849981FB429E4002498AF /* Handler */,
+				60ADE5781FAF1FB700E350C0 /* Config */,
+				609B710B1FA5937C007EC36F /* Provider */,
+				60F253F31F9BEA330013B414 /* Model */,
+				60F253F11F9BDF100013B414 /* View */,
+				60F253EE1F9B47430013B414 /* Controllers */,
 				60F253CA1F9B46100013B414 /* AppDelegate.swift */,
 				60F253CC1F9B46100013B414 /* ViewController.swift */,
 				60F253CE1F9B46100013B414 /* Main.storyboard */,
@@ -99,6 +176,61 @@
 			path = CollabTests;
 			sourceTree = "<group>";
 		};
+		60F253EE1F9B47430013B414 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				60F253EF1F9B476B0013B414 /* SessionListViewController.swift */,
+				60F253FC1F9C0BAB0013B414 /* CreateSessionViewController.swift */,
+				60F253FE1F9C6C870013B414 /* SessionViewController.swift */,
+				60F254021F9DBA8B0013B414 /* PasswordViewController.swift */,
+				60F254041F9DD1D50013B414 /* AddQuestionViewController.swift */,
+				60ADE57D1FAF917C00E350C0 /* SignInController.swift */,
+				60ADE57F1FB03ECD00E350C0 /* CollabNavigationController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		60F253F11F9BDF100013B414 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				609B71081FA568CD007EC36F /* SessionTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		60F253F31F9BEA330013B414 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				60F253F41F9BEA580013B414 /* Session.swift */,
+				60F253F61F9BEA720013B414 /* User.swift */,
+				60F254001F9DA32B0013B414 /* Note.swift */,
+				60ADE57B1FAF224300E350C0 /* Token.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CCB7233DA0F986A74CB04B5D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7D0935B0AC0CA358E119F73B /* Pods-Collab.debug.xcconfig */,
+				37D9D0AD93A11A11C0BD973F /* Pods-Collab.release.xcconfig */,
+				3965EE8261E1A33238D9CF1C /* Pods-CollabTests.debug.xcconfig */,
+				D5730DD855B66EC6D8B71101 /* Pods-CollabTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DA64E61ADB604EF647E59CF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				609B70FC1FA5455B007EC36F /* Motion.framework */,
+				609B70FA1FA54557007EC36F /* Material.framework */,
+				FEF522B33C0A76F6BB7CDD93 /* Pods_Collab.framework */,
+				D66E75055EE42A99F62E8B1D /* Pods_CollabTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +238,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 60F253E71F9B46100013B414 /* Build configuration list for PBXNativeTarget "Collab" */;
 			buildPhases = (
+				112285F2673316F49FAD7CB2 /* [CP] Check Pods Manifest.lock */,
 				60F253C31F9B46100013B414 /* Sources */,
 				60F253C41F9B46100013B414 /* Frameworks */,
 				60F253C51F9B46100013B414 /* Resources */,
+				9DF20DE95EAA17B776CBF144 /* [CP] Embed Pods Frameworks */,
+				074C05930A9CD97AAA20EA11 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,9 +258,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 60F253EA1F9B46100013B414 /* Build configuration list for PBXNativeTarget "CollabTests" */;
 			buildPhases = (
+				66B9A49743D71D3441FBFAE8 /* [CP] Check Pods Manifest.lock */,
 				60F253DA1F9B46100013B414 /* Sources */,
 				60F253DB1F9B46100013B414 /* Frameworks */,
 				60F253DC1F9B46100013B414 /* Resources */,
+				3DF4D436088C3BB4A4AC108B /* [CP] Embed Pods Frameworks */,
+				13D5150CCFE69C0EBDC2019D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -197,14 +335,132 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		074C05930A9CD97AAA20EA11 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Collab/Pods-Collab-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		112285F2673316F49FAD7CB2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Collab-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		13D5150CCFE69C0EBDC2019D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CollabTests/Pods-CollabTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3DF4D436088C3BB4A4AC108B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CollabTests/Pods-CollabTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66B9A49743D71D3441FBFAE8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CollabTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9DF20DE95EAA17B776CBF144 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Collab/Pods-Collab-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Collab/Pods-Collab-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		60F253C31F9B46100013B414 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60ADE5771FAF1CFC00E350C0 /* LoginProvider.swift in Sources */,
+				609B71091FA568CD007EC36F /* SessionTableViewCell.swift in Sources */,
+				60F253FD1F9C0BAB0013B414 /* CreateSessionViewController.swift in Sources */,
+				60F254031F9DBA8B0013B414 /* PasswordViewController.swift in Sources */,
+				6078499A1FB42A34002498AF /* CollabHandler.swift in Sources */,
+				60ADE57A1FAF1FCA00E350C0 /* Endpoints.swift in Sources */,
+				60F253FF1F9C6C870013B414 /* SessionViewController.swift in Sources */,
 				60F253CD1F9B46100013B414 /* ViewController.swift in Sources */,
+				60ADE57E1FAF917C00E350C0 /* SignInController.swift in Sources */,
+				60ADE5801FB03ECD00E350C0 /* CollabNavigationController.swift in Sources */,
+				60ADE57C1FAF224300E350C0 /* Token.swift in Sources */,
+				60F254011F9DA32B0013B414 /* Note.swift in Sources */,
+				60F254051F9DD1D50013B414 /* AddQuestionViewController.swift in Sources */,
 				60F253CB1F9B46100013B414 /* AppDelegate.swift in Sources */,
+				60F253F71F9BEA720013B414 /* User.swift in Sources */,
 				60F253D31F9B46100013B414 /* Collab.xcdatamodeld in Sources */,
+				60F253F01F9B476B0013B414 /* SessionListViewController.swift in Sources */,
+				60F253F51F9BEA580013B414 /* Session.swift in Sources */,
+				60B8ECAC1FAAB4B600D7DAFD /* DataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,12 +611,15 @@
 		};
 		60F253E81F9B46100013B414 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D0935B0AC0CA358E119F73B /* Pods-Collab.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QH5LSLE2U2;
 				INFOPLIST_FILE = Collab/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobilux.Collab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -370,11 +629,13 @@
 		};
 		60F253E91F9B46100013B414 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37D9D0AD93A11A11C0BD973F /* Pods-Collab.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QH5LSLE2U2;
 				INFOPLIST_FILE = Collab/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobilux.Collab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -385,6 +646,7 @@
 		};
 		60F253EB1F9B46100013B414 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3965EE8261E1A33238D9CF1C /* Pods-CollabTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -402,6 +664,7 @@
 		};
 		60F253EC1F9B46100013B414 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5730DD855B66EC6D8B71101 /* Pods-CollabTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
