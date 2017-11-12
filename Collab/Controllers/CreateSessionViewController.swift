@@ -37,20 +37,6 @@ class CreateSessionViewController: UIViewController {
     
     
     @IBAction func createSession(_ sender: Any) {
-        /*
-        let room : Session = Session(sessionId : 5,
-                                     sessionName : sessionName.text!,
-                                     sessionDescription : sessionDescription.text!,
-                                     usernameCreator : "dionabel@rosales.com",
-                                     password : "",
-                                     isPublic : true,
-                                     notes : [Note](),
-                                     creator : User(
-                                        email : "dionabel@rosales.com",
-                                        firstName : "Dionabel",
-                                        lastName : "Rosales",
-                                        password : ""))*/
-        
         var session : Session = Session()
         
         session.sessionName        = sessionName.text!
@@ -58,10 +44,11 @@ class CreateSessionViewController: UIViewController {
         session.password           = password.text!
         session.isPublic           = isPublic.selectedSegmentIndex == 0
         session.usernameCreator    = CollabHandler.Instance.usernameLoggedIn
+        session.notes              = [Note]()
         
-        SessionProvider.Instance.postSession(session: session) { (success) in
+        SessionProvider.Instance.postSession(session: session) { (success, sessionResult) in
             if (success) {
-                self.createSessionDelegate?.addSession(session: session)
+                self.createSessionDelegate?.addSession(session: sessionResult!)
                 self.alertTheUser(title: "Create Session", message: "Session was successfully created!")
             } else {
                 self.alertTheUser(title: "Create Session", message: "Something wrong happened while creating th session.")

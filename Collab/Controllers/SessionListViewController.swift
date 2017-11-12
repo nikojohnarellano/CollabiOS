@@ -43,7 +43,7 @@ class SessionListViewController: UITableViewController, CreateSessionDelegate, A
                 sessionName : "Study Tips",
                 sessionDescription: "A room made for students who are having trouble for midterms!",
                 usernameCreator : "nikoootine123@gmail.com",
-                password : "",
+                password : "adasd",
                 isPublic : true,
                 notes : [
                     Note(question : "What is the definition of Deadlock", answer : "Deadlock is waiting for other process to finish"),
@@ -52,8 +52,8 @@ class SessionListViewController: UITableViewController, CreateSessionDelegate, A
                 ],
                 creator: User(email : "nikoootine123@gmail.com", firstName : "Niko", lastName : "Arellano", password: "")
                 ),
-    ]
-     */
+    ]*/
+
     
     var sessions : [Session]?
     
@@ -68,6 +68,7 @@ class SessionListViewController: UITableViewController, CreateSessionDelegate, A
 
         // Do any additional setup after loading the view.
         // Load sessions
+        
         SessionProvider.Instance.fetchAllSessions {
             (success, sessions) in
             
@@ -160,16 +161,16 @@ extension SessionListViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> SessionTableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RoomCell", for: indexPath) as! SessionTableViewCell
         
-        let room = sessions?[indexPath.row]
+        let room = self.sessions![indexPath.row]
        
         /*
         cell.textLabel?.text = room.sessionName
         cell.detailTextLabel?.text = "Owned by: \(room.owner!.firstName!) \(room.owner!.lastName!)"
          */
         
-        cell.sessionName.text = room?.sessionName
-        cell.sessionDescription.text = room?.sessionDescription
-        cell.sessionOwner.text = "Owned by: \(String(describing: (room?.creator?.firstName!)!)) \(String(describing: (room?.creator?.lastName!)!))"
+        cell.sessionName.text = room.sessionName
+        cell.sessionDescription.text = room.sessionDescription
+        cell.sessionOwner.text = "Owned by: \(String(describing: (room.creator?.firstName!)!)) \(String(describing: (room.creator?.lastName!)!))"
  
         return cell 
     }
@@ -177,13 +178,15 @@ extension SessionListViewController {
     
     // Override row selection from table view
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let session : Session = sessions![indexPath.row]
+        let index = indexPath.row
+        
+        let room = self.sessions![index]
      
         // TODO
-        self.selectedSession = session
+        self.selectedSession = room
         
         // TODO
-        if session.sessionName == "Study Tips" {
+        if room.password != "" {
             self.performSegue(withIdentifier: "PasswordSegue", sender: Any?.self)
         } else {
             self.performSegue(withIdentifier: "PublicSessionSegue", sender: Any?.self)

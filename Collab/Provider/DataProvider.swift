@@ -11,7 +11,7 @@ import Alamofire
 
 
 typealias FetchAllSessionsHandler = (_ success : Bool, _ sessions : [Session]?) -> Void
-typealias PostSessionHandler      = (_ success : Bool) -> Void
+typealias PostSessionHandler      = (_ success : Bool, _ session : Session?) -> Void
 
 class SessionProvider{
     
@@ -114,14 +114,14 @@ class SessionProvider{
                         let session = try? JSONDecoder().decode(Session.self, from : data.data(using : .utf8)!)
                         
                         if(session != nil) {
-                            handler?(true)
+                            handler?(true, session!)
                         }
                     }
                 }
                 
             case .failure(_):
                 print("Error message:\(String(describing: response.result.error))")
-                handler?(false)
+                handler?(false, nil)
                 break
             }
             

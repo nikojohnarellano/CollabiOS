@@ -10,8 +10,10 @@ import Foundation
 
 struct Note : Codable {
     
-    var question : String
-    var answer : String
+    var noteId : Int?
+    var question : String?
+    var answer : String?
+    var usernameOwner : String?
     //var session : Session?
     
 }

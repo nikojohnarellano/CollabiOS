@@ -10,9 +10,9 @@ import Foundation
 
 struct User : Codable {
     
+    var userId : String?
     var email : String?
     var firstName : String?
     var lastName : String?
-    var password : String?
 
 }

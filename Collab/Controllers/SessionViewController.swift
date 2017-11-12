@@ -69,7 +69,10 @@ extension SessionViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return (session?.notes?.count)!
+        if let notes = session?.notes {
+            return (session?.notes?.count)!
+        }
+        return 0
     }
     
     // Override row values initializer
