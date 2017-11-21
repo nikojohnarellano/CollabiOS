@@ -18,10 +18,9 @@ class SignInController: UIViewController {
     
     @IBOutlet weak var password: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.hideKeyboardWhenTappedAround() 
         // Do any additional setup after loading the view.
     }
 
@@ -32,24 +31,33 @@ class SignInController: UIViewController {
     
     
     @IBAction func login(_ sender: Any) {
-        LoginProvider.Instance.login(email : emailAddress.text!, password : password.text!, loginHandler: { (message, token) in
-            if message != nil {
-                self.alertTheUser(title  : "Problem with Authentication",
-                                  message: message!)
-            } else {
+        let sv = UIViewController.displaySpinner(onView: self.view)
+        
+        if Connectivity.isConnectedToInternet() {
+            AccountProvider.Instance.login(email : emailAddress.text!, password : password.text!, loginHandler: { (message, token) in
                 
-                CollabHandler.Instance.token            = token!
-                CollabHandler.Instance.usernameLoggedIn = self.emailAddress.text!
-                
-                //self.token             = token
-                self.emailAddress.text = ""
-                self.password.text     = ""
-
-                
-                self.performSegue(withIdentifier: self.LOGIN_SEGUE, sender: nil)
-                
-            }
-        })
+                UIViewController.removeSpinner(spinner: sv)
+                if message != nil {
+                    self.alertTheUser(title   : "Problem with Authentication",
+                                      message : message!)
+                } else {
+                    
+                    CollabHandler.Instance.token            = token!
+                    CollabHandler.Instance.usernameLoggedIn = self.emailAddress.text!
+                    
+                    //self.token             = token
+                    self.emailAddress.text = ""
+                    self.password.text     = ""
+                    
+                    
+                    self.performSegue(withIdentifier: self.LOGIN_SEGUE, sender: nil)
+                    
+                }
+            })
+        } else {
+            self.alertTheUser(title: "No Network Found", message: "You need to have an internet connection to use Collab.")
+        }
+        
     }
     
     private func alertTheUser(title : String, message : String) {
@@ -61,7 +69,6 @@ class SignInController: UIViewController {
         
         present(alert, animated : true, completion: nil)
     }
-    
     
     // MARK: - Navigation
 

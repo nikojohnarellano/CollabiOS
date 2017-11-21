@@ -12,14 +12,46 @@ protocol SetSessionDelegate : class {
     func setSession(session : Session)
 }
 
-class SessionViewController: UITableViewController, SetSessionDelegate {
+class NoteListController: UITableViewController, SetSessionDelegate, AddQuestionDelegate {
     
     var session : Session?
     
+    var notes : [Note]?
+    
+    var selectedNote : Note?
+    
+    let VIEW_NOTE_SEGUE = "ViewNoteSegue";
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround() 
         // Do any additional setup after loading the view.
+        
+        if let s = self.session {
+            if Connectivity.isConnectedToInternet() {
+                NoteProvider.Instance.fetchNotesForSession(session: s, handler: { (success, notes) in
+                    if(success) {
+                        if let n = notes {
+                            self.notes = n
+                            self.tableView.reloadData()
+                        }
+                    }
+                })
+            } else {
+                self.alertTheUser(title: "No Network Found", message: "You need to have an internet connection to use Collab.")
+            }
+        }
+        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -44,33 +76,59 @@ class SessionViewController: UITableViewController, SetSessionDelegate {
         }
     }
     
-    func setSession(session: Session) {
-        self.session = session;
-    }
-    
     @IBAction func addQuestion(_ sender: Any) {
         self.performSegue(withIdentifier: "AddQuestionSegue", sender: nil)
     }
     
-    
-    // MARK: - Navigation
+    private func alertTheUser(title : String, message : String) {
+        let alert = UIAlertController(title : title, message : message, preferredStyle : .alert)
+        
+        let ok = UIAlertAction(title : "Ok", style: .default, handler: nil)
+        
+        alert.addAction(ok)
+        
+        present(alert, animated : true, completion: nil)
+    }
 
+}
+
+extension NoteListController {
+    // MARK: - Navigation
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if let viewControllerB = segue.destination as? AddQuestionViewController {
+            viewControllerB.addQuestionDelegate = self
+            viewControllerB.session             = self.session!
+        } else if let viewControllerC = segue.destination as? NoteViewController {
+            viewControllerC.note = self.selectedNote!
+        }
     }
     
+}
 
+
+// Protocols
+extension NoteListController {
+    func setSession(session: Session) {
+        self.session = session;
+    }
+    
+    func addQuestion(question: Note) {
+        self.notes?.append(question)
+        self.tableView.reloadData()
+    }
 }
 
 // Table View Data Source Extension
-extension SessionViewController {
+extension NoteListController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if let notes = session?.notes {
-            return (session?.notes?.count)!
+        if let n = notes {
+            return n.count
         }
         return 0
     }
@@ -78,7 +136,7 @@ extension SessionViewController {
     // Override row values initializer
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell     = tableView.dequeueReusableCell(withIdentifier: "QuestionCell", for: indexPath)
-        let question = session?.notes?[indexPath.row]
+        let question = self.notes?[indexPath.row]
         
         cell.textLabel?.text = question?.question
         
@@ -87,9 +145,10 @@ extension SessionViewController {
     
     // Override row selection from table view
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let question : Note = (self.session?.notes?[indexPath.row])!
+        let question : Note = (self.notes?[indexPath.row])!
         
-        
+        self.selectedNote = question
+        self.performSegue(withIdentifier: VIEW_NOTE_SEGUE, sender: Any?.self)
     }
     
      /*

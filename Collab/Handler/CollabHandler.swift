@@ -20,4 +20,9 @@ class CollabHandler {
         return _instance;
     }
     
+    public func clearHandlers() -> Void {
+        self.usernameLoggedIn = ""
+        self.token            = Token()
+    }
+    
 }

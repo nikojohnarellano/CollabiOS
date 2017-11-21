@@ -14,6 +14,8 @@ struct Note : Codable {
     var question : String?
     var answer : String?
     var usernameOwner : String?
-    //var session : Session?
+    var sessionId : Int?
+    var session : Session?
+    var owner : User?
     
 }

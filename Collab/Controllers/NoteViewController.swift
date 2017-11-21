@@ -1,19 +1,29 @@
 //
-//  CollabNavigationController.swift
+//  NoteViewController.swift
 //  Collab
 //
-//  Created by Niko Arellano on 2017-11-05.
+//  Created by Niko Arellano on 2017-11-12.
 //  Copyright © 2017 Mobilux. All rights reserved.
 //
 
 import UIKit
 
-class CollabNavigationController: UINavigationController {
+class NoteViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var noteLabel: UILabel!
+    
+    var note : Note?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround() 
+        self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
+        titleLabel.text = self.note?.question
+        noteLabel.text  = self.note?.answer
+        
+        noteLabel.sizeToFit()
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +31,10 @@ class CollabNavigationController: UINavigationController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func close(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

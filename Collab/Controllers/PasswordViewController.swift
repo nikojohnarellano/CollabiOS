@@ -12,10 +12,13 @@ class PasswordViewController: UIViewController {
     
     var session : Session?
     
+    @IBOutlet weak var password: UITextField!
+    
     let PASSWORD_TO_SESSION = "PasswordToSessionSegue"
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround() 
         // Do any additional setup after loading the view.
     }
 
@@ -26,7 +29,12 @@ class PasswordViewController: UIViewController {
     
     
     @IBAction func go(_ sender: Any) {
-        self.performSegue(withIdentifier: PASSWORD_TO_SESSION, sender: nil)
+        
+        if password.text! == self.session?.password {
+            self.performSegue(withIdentifier: PASSWORD_TO_SESSION, sender: nil)
+        } else {
+            self.alertTheUser(title: "Wrong Password", message: "The password entered does not match the session's password")
+        }
     }
     
     
@@ -37,9 +45,19 @@ class PasswordViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        if let sessionViewController = segue.destination as? SessionViewController {
+        if let sessionViewController = segue.destination as? NoteListController {
             sessionViewController.session = self.session!
         }
+    }
+    
+    private func alertTheUser(title : String, message : String) {
+        let alert = UIAlertController(title : title, message : message, preferredStyle : .alert)
+        
+        let ok = UIAlertAction(title : "Ok", style: .default, handler: nil)
+        
+        alert.addAction(ok)
+        
+        present(alert, animated : true, completion: nil)
     }
     
 

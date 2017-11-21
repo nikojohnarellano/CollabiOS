@@ -26,7 +26,7 @@ class CreateSessionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.hideKeyboardWhenTappedAround() 
         // Do any additional setup after loading the view.
     }
 
@@ -46,23 +46,37 @@ class CreateSessionViewController: UIViewController {
         session.usernameCreator    = CollabHandler.Instance.usernameLoggedIn
         session.notes              = [Note]()
         
-        SessionProvider.Instance.postSession(session: session) { (success, sessionResult) in
-            if (success) {
-                self.createSessionDelegate?.addSession(session: sessionResult!)
-                self.alertTheUser(title: "Create Session", message: "Session was successfully created!")
-            } else {
-                self.alertTheUser(title: "Create Session", message: "Something wrong happened while creating th session.")
+        let sv = UIViewController.displaySpinner(onView: self.view)
+        
+        if Connectivity.isConnectedToInternet() {
+            SessionProvider.Instance.postSession(session: session) { (success, sessionResult) in
+                
+                UIViewController.removeSpinner(spinner: sv)
+                
+                if (success) {
+                    self.alertTheUser(title: "Create Session", message: "Session was successfully created!", dismiss : true)
+                    self.createSessionDelegate?.addSession(session: sessionResult!)
+                } else {
+                    self.alertTheUser(title: "Create Session", message: "Something wrong happened while creating the session.", dismiss : false)
+                }
             }
-            
-            self.navigationController?.popViewController(animated: true)
+        } else {
+            self.alertTheUser(title: "No Network Found", message: "You need to have an internet connection to use Collab.", dismiss: false)
         }
+        
   
     }
     
-    private func alertTheUser(title : String, message : String) {
+    private func alertTheUser(title : String, message : String, dismiss : Bool) {
         let alert = UIAlertController(title : title, message : message, preferredStyle : .alert)
         
-        let ok = UIAlertAction(title : "Ok", style: .default, handler: nil)
+        let ok = UIAlertAction(title : "Ok", style: .default) {
+            (alert) in
+            
+            if (dismiss) {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
         
         alert.addAction(ok)
         

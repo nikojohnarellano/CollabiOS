@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		602236781FC395B4007F6D9A /* collab-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 602236771FC395B4007F6D9A /* collab-logo.png */; };
+		6022367A1FC40B84007F6D9A /* JoinSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602236791FC40B84007F6D9A /* JoinSessionViewController.swift */; };
+		6022367C1FC4165F007F6D9A /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6022367B1FC4165F007F6D9A /* Connectivity.swift */; };
 		6078499A1FB42A34002498AF /* CollabHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607849991FB42A34002498AF /* CollabHandler.swift */; };
+		608CA32F1FB8C65900933CB1 /* NoteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608CA32E1FB8C65900933CB1 /* NoteProvider.swift */; };
 		609B71091FA568CD007EC36F /* SessionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609B71081FA568CD007EC36F /* SessionTableViewCell.swift */; };
-		60ADE5771FAF1CFC00E350C0 /* LoginProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ADE5761FAF1CFC00E350C0 /* LoginProvider.swift */; };
+		60ADE5771FAF1CFC00E350C0 /* AccountProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ADE5761FAF1CFC00E350C0 /* AccountProvider.swift */; };
 		60ADE57A1FAF1FCA00E350C0 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ADE5791FAF1FCA00E350C0 /* Endpoints.swift */; };
 		60ADE57C1FAF224300E350C0 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ADE57B1FAF224300E350C0 /* Token.swift */; };
 		60ADE57E1FAF917C00E350C0 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ADE57D1FAF917C00E350C0 /* SignInController.swift */; };
 		60ADE5801FB03ECD00E350C0 /* CollabNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ADE57F1FB03ECD00E350C0 /* CollabNavigationController.swift */; };
-		60B8ECAC1FAAB4B600D7DAFD /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B8ECAB1FAAB4B600D7DAFD /* DataProvider.swift */; };
+		60B3C4F61FB97A6B0002ABA5 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B3C4F51FB97A6B0002ABA5 /* NoteViewController.swift */; };
+		60B8ECAC1FAAB4B600D7DAFD /* SessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B8ECAB1FAAB4B600D7DAFD /* SessionProvider.swift */; };
+		60D749031FBD366E005DF9CE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D749021FBD366E005DF9CE /* RegisterViewController.swift */; };
 		60F253CB1F9B46100013B414 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F253CA1F9B46100013B414 /* AppDelegate.swift */; };
 		60F253CD1F9B46100013B414 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F253CC1F9B46100013B414 /* ViewController.swift */; };
 		60F253D01F9B46100013B414 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60F253CE1F9B46100013B414 /* Main.storyboard */; };
@@ -26,7 +32,7 @@
 		60F253F51F9BEA580013B414 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F253F41F9BEA580013B414 /* Session.swift */; };
 		60F253F71F9BEA720013B414 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F253F61F9BEA720013B414 /* User.swift */; };
 		60F253FD1F9C0BAB0013B414 /* CreateSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F253FC1F9C0BAB0013B414 /* CreateSessionViewController.swift */; };
-		60F253FF1F9C6C870013B414 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F253FE1F9C6C870013B414 /* SessionViewController.swift */; };
+		60F253FF1F9C6C870013B414 /* NoteListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F253FE1F9C6C870013B414 /* NoteListController.swift */; };
 		60F254011F9DA32B0013B414 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F254001F9DA32B0013B414 /* Note.swift */; };
 		60F254031F9DBA8B0013B414 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F254021F9DBA8B0013B414 /* PasswordViewController.swift */; };
 		60F254051F9DD1D50013B414 /* AddQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F254041F9DD1D50013B414 /* AddQuestionViewController.swift */; };
@@ -47,16 +53,22 @@
 /* Begin PBXFileReference section */
 		37D9D0AD93A11A11C0BD973F /* Pods-Collab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Collab.release.xcconfig"; path = "Pods/Target Support Files/Pods-Collab/Pods-Collab.release.xcconfig"; sourceTree = "<group>"; };
 		3965EE8261E1A33238D9CF1C /* Pods-CollabTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollabTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CollabTests/Pods-CollabTests.debug.xcconfig"; sourceTree = "<group>"; };
+		602236771FC395B4007F6D9A /* collab-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "collab-logo.png"; path = "Assets.xcassets/collab-logo.png"; sourceTree = "<group>"; };
+		602236791FC40B84007F6D9A /* JoinSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinSessionViewController.swift; sourceTree = "<group>"; };
+		6022367B1FC4165F007F6D9A /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		607849991FB42A34002498AF /* CollabHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollabHandler.swift; sourceTree = "<group>"; };
+		608CA32E1FB8C65900933CB1 /* NoteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteProvider.swift; sourceTree = "<group>"; };
 		609B70FA1FA54557007EC36F /* Material.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Material.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		609B70FC1FA5455B007EC36F /* Motion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Motion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		609B71081FA568CD007EC36F /* SessionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTableViewCell.swift; sourceTree = "<group>"; };
-		60ADE5761FAF1CFC00E350C0 /* LoginProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProvider.swift; sourceTree = "<group>"; };
+		60ADE5761FAF1CFC00E350C0 /* AccountProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountProvider.swift; sourceTree = "<group>"; };
 		60ADE5791FAF1FCA00E350C0 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		60ADE57B1FAF224300E350C0 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		60ADE57D1FAF917C00E350C0 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		60ADE57F1FB03ECD00E350C0 /* CollabNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollabNavigationController.swift; sourceTree = "<group>"; };
-		60B8ECAB1FAAB4B600D7DAFD /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		60B3C4F51FB97A6B0002ABA5 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		60B8ECAB1FAAB4B600D7DAFD /* SessionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionProvider.swift; sourceTree = "<group>"; };
+		60D749021FBD366E005DF9CE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		60F253C71F9B46100013B414 /* Collab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Collab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60F253CA1F9B46100013B414 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60F253CC1F9B46100013B414 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,7 +84,7 @@
 		60F253F41F9BEA580013B414 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		60F253F61F9BEA720013B414 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		60F253FC1F9C0BAB0013B414 /* CreateSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSessionViewController.swift; sourceTree = "<group>"; };
-		60F253FE1F9C6C870013B414 /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
+		60F253FE1F9C6C870013B414 /* NoteListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListController.swift; sourceTree = "<group>"; };
 		60F254001F9DA32B0013B414 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		60F254021F9DBA8B0013B414 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		60F254041F9DD1D50013B414 /* AddQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionViewController.swift; sourceTree = "<group>"; };
@@ -113,8 +125,10 @@
 		609B710B1FA5937C007EC36F /* Provider */ = {
 			isa = PBXGroup;
 			children = (
-				60B8ECAB1FAAB4B600D7DAFD /* DataProvider.swift */,
-				60ADE5761FAF1CFC00E350C0 /* LoginProvider.swift */,
+				60B8ECAB1FAAB4B600D7DAFD /* SessionProvider.swift */,
+				60ADE5761FAF1CFC00E350C0 /* AccountProvider.swift */,
+				608CA32E1FB8C65900933CB1 /* NoteProvider.swift */,
+				6022367B1FC4165F007F6D9A /* Connectivity.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -160,6 +174,7 @@
 				60F253CC1F9B46100013B414 /* ViewController.swift */,
 				60F253CE1F9B46100013B414 /* Main.storyboard */,
 				60F253D41F9B46100013B414 /* Assets.xcassets */,
+				602236771FC395B4007F6D9A /* collab-logo.png */,
 				60F253D61F9B46100013B414 /* LaunchScreen.storyboard */,
 				60F253D91F9B46100013B414 /* Info.plist */,
 				60F253D11F9B46100013B414 /* Collab.xcdatamodeld */,
@@ -181,11 +196,14 @@
 			children = (
 				60F253EF1F9B476B0013B414 /* SessionListViewController.swift */,
 				60F253FC1F9C0BAB0013B414 /* CreateSessionViewController.swift */,
-				60F253FE1F9C6C870013B414 /* SessionViewController.swift */,
+				60F253FE1F9C6C870013B414 /* NoteListController.swift */,
 				60F254021F9DBA8B0013B414 /* PasswordViewController.swift */,
 				60F254041F9DD1D50013B414 /* AddQuestionViewController.swift */,
 				60ADE57D1FAF917C00E350C0 /* SignInController.swift */,
+				60D749021FBD366E005DF9CE /* RegisterViewController.swift */,
 				60ADE57F1FB03ECD00E350C0 /* CollabNavigationController.swift */,
+				60B3C4F51FB97A6B0002ABA5 /* NoteViewController.swift */,
+				602236791FC40B84007F6D9A /* JoinSessionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -321,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60F253D81F9B46100013B414 /* LaunchScreen.storyboard in Resources */,
+				602236781FC395B4007F6D9A /* collab-logo.png in Resources */,
 				60F253D51F9B46100013B414 /* Assets.xcassets in Resources */,
 				60F253D01F9B46100013B414 /* Main.storyboard in Resources */,
 			);
@@ -442,25 +461,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60ADE5771FAF1CFC00E350C0 /* LoginProvider.swift in Sources */,
+				60ADE5771FAF1CFC00E350C0 /* AccountProvider.swift in Sources */,
+				60D749031FBD366E005DF9CE /* RegisterViewController.swift in Sources */,
 				609B71091FA568CD007EC36F /* SessionTableViewCell.swift in Sources */,
 				60F253FD1F9C0BAB0013B414 /* CreateSessionViewController.swift in Sources */,
 				60F254031F9DBA8B0013B414 /* PasswordViewController.swift in Sources */,
 				6078499A1FB42A34002498AF /* CollabHandler.swift in Sources */,
 				60ADE57A1FAF1FCA00E350C0 /* Endpoints.swift in Sources */,
-				60F253FF1F9C6C870013B414 /* SessionViewController.swift in Sources */,
+				60F253FF1F9C6C870013B414 /* NoteListController.swift in Sources */,
+				60B3C4F61FB97A6B0002ABA5 /* NoteViewController.swift in Sources */,
 				60F253CD1F9B46100013B414 /* ViewController.swift in Sources */,
 				60ADE57E1FAF917C00E350C0 /* SignInController.swift in Sources */,
 				60ADE5801FB03ECD00E350C0 /* CollabNavigationController.swift in Sources */,
+				608CA32F1FB8C65900933CB1 /* NoteProvider.swift in Sources */,
+				6022367A1FC40B84007F6D9A /* JoinSessionViewController.swift in Sources */,
 				60ADE57C1FAF224300E350C0 /* Token.swift in Sources */,
 				60F254011F9DA32B0013B414 /* Note.swift in Sources */,
 				60F254051F9DD1D50013B414 /* AddQuestionViewController.swift in Sources */,
 				60F253CB1F9B46100013B414 /* AppDelegate.swift in Sources */,
 				60F253F71F9BEA720013B414 /* User.swift in Sources */,
 				60F253D31F9B46100013B414 /* Collab.xcdatamodeld in Sources */,
+				6022367C1FC4165F007F6D9A /* Connectivity.swift in Sources */,
 				60F253F01F9B476B0013B414 /* SessionListViewController.swift in Sources */,
 				60F253F51F9BEA580013B414 /* Session.swift in Sources */,
-				60B8ECAC1FAAB4B600D7DAFD /* DataProvider.swift in Sources */,
+				60B8ECAC1FAAB4B600D7DAFD /* SessionProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

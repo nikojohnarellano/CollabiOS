@@ -27,7 +27,7 @@ class SessionProvider{
             "Accept": "application/json"
         ]
         
-        Alamofire.request("http://localhost:5000/api/session", headers: headers).responseString {
+        Alamofire.request("\(Endpoints.local)api/session", headers: headers).responseString {
             response in
             
             switch(response.result) {
@@ -38,13 +38,15 @@ class SessionProvider{
                         
                         if(sessions?.count != 0) {
                             handler?(true, sessions)
+                        } else {
+                            handler?(true, nil)
                         }
                     }
                 }
                 
             case .failure(_):
                 print("Error message:\(String(describing: response.result.error))")
-                //handler?(false, sessions)
+                handler?(false, nil)
                 break
             }
             
@@ -62,7 +64,7 @@ class SessionProvider{
             "Accept": "application/json"
         ]
         
-        Alamofire.request("http://localhost:5000/api/session/2", headers: headers).responseString {
+        Alamofire.request("\(Endpoints.local)api/session/2", headers: headers).responseString {
             response in
             
             switch(response.result) {

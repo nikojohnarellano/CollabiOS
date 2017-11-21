@@ -12,48 +12,7 @@ protocol SetQuestionsDelegate : class {
     func setQuestions(questions : [Note])
 }
 
-class SessionListViewController: UITableViewController, CreateSessionDelegate, AddQuestionDelegate {
-    /*
-    var sessions : [Session] = [
-        Session(sessionId: 1,
-                sessionName : "Data Comm Midterm",
-                sessionDescription: "Please contribute a question when joining. Thanks!",
-                usernameCreator : "nikoootine123@gmail.com",
-                password : "",
-                isPublic : true,
-                notes : [
-                    Note(question : "What is the definition of Deadlock", answer : "Deadlock is waiting for other process to finish"),
-                    Note(question : "Mutual Exclusion Requirements", answer : "Its too many"),
-                    Note(question : "Define Semaphore", answer : "semaphore uses int variable to identify flags")],
-                creator : User(email : "nikoootine123@gmail.com",
-                               firstName : "Niko",
-                               lastName : "Arellano",
-                               password: "")
-                ),
-        Session(sessionId : 2,
-                sessionName : "Business Law Questions",
-                sessionDescription: "Join this room to get access to midterm review questions",
-                usernameCreator : "katehudson@gmail.com",
-                password : "",
-                isPublic : true,
-                notes : [Note](),
-                creator : User(email : "katehudson@gmail.com", firstName : "Kate", lastName : "Hudson", password : "")
-               ),
-        Session(sessionId : 3,
-                sessionName : "Study Tips",
-                sessionDescription: "A room made for students who are having trouble for midterms!",
-                usernameCreator : "nikoootine123@gmail.com",
-                password : "adasd",
-                isPublic : true,
-                notes : [
-                    Note(question : "What is the definition of Deadlock", answer : "Deadlock is waiting for other process to finish"),
-                    Note(question : "Mutual Exclusion Requirements", answer : "Its too many"),
-                    Note(question : "Define Semaphore", answer : "semaphore uses int variable to identify flags")
-                ],
-                creator: User(email : "nikoootine123@gmail.com", firstName : "Niko", lastName : "Arellano", password: "")
-                ),
-    ]*/
-
+class SessionListViewController: UITableViewController, CreateSessionDelegate {
     
     var sessions : [Session]?
     
@@ -65,18 +24,33 @@ class SessionListViewController: UITableViewController, CreateSessionDelegate, A
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.hideKeyboardWhenTappedAround() 
         // Do any additional setup after loading the view.
         // Load sessions
         
-        SessionProvider.Instance.fetchAllSessions {
-            (success, sessions) in
-            
-            if(success) {
-                self.sessions = sessions!
-                self.tableView.reloadData()
+        if Connectivity.isConnectedToInternet() {
+            SessionProvider.Instance.fetchAllSessions {
+                (success, sessions) in
+                
+                if(success) {
+                    if let s = sessions {
+                        self.sessions = s
+                        self.tableView.reloadData()
+                    }
+                }
             }
+        } else {
+            self.alertTheUser(title: "No Network Found", message: "You need to have an internet connection to use Collab.")
         }
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,10 +58,15 @@ class SessionListViewController: UITableViewController, CreateSessionDelegate, A
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBAction func logout(_ sender: Any) {
+        CollabHandler.Instance.clearHandlers()
+        self.navigationController?.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func joinSession(_ sender: Any) {
-        //super.viewWillAppear(animated)
         
-        
+        /*
         let alertController = UIAlertController(title: "Join Room", message: nil, preferredStyle: .actionSheet)
         
         let scanQrButton = UIAlertAction(title: "Scan QR Code", style: .default, handler: { (action) -> Void in
@@ -108,10 +87,19 @@ class SessionListViewController: UITableViewController, CreateSessionDelegate, A
         alertController.addAction(cancelButton)
         
         self.navigationController!.present(alertController, animated: true, completion: nil)
-
-    
+        */
+        self.performSegue(withIdentifier: self.ENTER_SESSION_SEGUE, sender: Any?.self)
     }
 
+    private func alertTheUser(title : String, message : String) {
+        let alert = UIAlertController(title : title, message : message, preferredStyle : .alert)
+        
+        let ok = UIAlertAction(title : "Ok", style: .default, handler: nil)
+        
+        alert.addAction(ok)
+        
+        present(alert, animated : true, completion: nil)
+    }
 
 }
 
@@ -120,12 +108,6 @@ extension SessionListViewController {
     func addSession(session: Session) {
         self.sessions?.append(session)
         self.tableView.reloadData()
-    }
-    
-    func addQuestion(session : Session, question: Note) {
-        if var session = self.sessions?.first(where: {$0.sessionName == session.sessionName }) {
-            session.notes?.append(question)
-        }
     }
 }
 
@@ -136,13 +118,15 @@ extension SessionListViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let viewControllerB = segue.destination as? CreateSessionViewController {
             viewControllerB.createSessionDelegate = self
-        } else if let sessionView = segue.destination as? SessionViewController {
+        } else if let sessionView = segue.destination as? NoteListController {
             sessionView.session  = self.selectedSession!
         } else if let passwordView = segue.destination as? PasswordViewController {
             passwordView.session = self.selectedSession!
+        } else if let joinSessionView = segue.destination as? JoinSessionViewController{
+            joinSessionView.sessions = self.sessions!
         }
     }
-    
+
 }
 
 // Table View Data Source Extension
@@ -163,11 +147,6 @@ extension SessionListViewController {
         
         let room = self.sessions![indexPath.row]
        
-        /*
-        cell.textLabel?.text = room.sessionName
-        cell.detailTextLabel?.text = "Owned by: \(room.owner!.firstName!) \(room.owner!.lastName!)"
-         */
-        
         cell.sessionName.text = room.sessionName
         cell.sessionDescription.text = room.sessionDescription
         cell.sessionOwner.text = "Owned by: \(String(describing: (room.creator?.firstName!)!)) \(String(describing: (room.creator?.lastName!)!))"

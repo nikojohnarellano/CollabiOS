@@ -10,6 +10,6 @@ import Foundation
 
 class Endpoints {
     
-    static let local = "http://localhost:5000/"
+    static let local = "http://collabsessionapi.azurewebsites.net/"
     static let prod = ""
 }
